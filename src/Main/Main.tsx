@@ -1,4 +1,4 @@
-import { Stack, Center, Button, Flex, Text, Group } from '@mantine/core';
+import { Stack, Center, Button, Flex, Text } from '@mantine/core';
 import { IconCrosshair } from '@tabler/icons-react';
 import { useColorWorker } from '../hooks/useColorWorker';
 import { DropZone } from './components/DropZone';
@@ -19,8 +19,7 @@ export function Main() {
     <Center style={{ width: '100%', height: '100vh' }}>
       <Flex align="center" justify="center" gap="md">
         <Flex gap="lg">
-          <Stack>
-            <div style={{ width: '28px', height: '28px' }} />
+          <Stack style={{ minWidth: '28px' }}>
             {colors.map((color) => {
               return <CopyColorButton value={color} key={color} />;
             })}

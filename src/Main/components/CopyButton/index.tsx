@@ -4,7 +4,7 @@ import { FC } from 'react';
 export const CopyColorButton: FC<Omit<CopyButtonProps, 'children'>> = ({ ...args }) => {
   return (
     <Copy {...args}>
-      {({ copied, copy }) => <ActionIcon style={{ backgroundColor: args.value }} onClick={copy} />}
+      {({ copy }) => <ActionIcon style={{ backgroundColor: args.value }} onClick={copy} />}
     </Copy>
   );
 };
