@@ -1,8 +1,7 @@
-# Mantine + Vite template
+## Installation
+```sh
+git clone **edit**
+```
+[![react-example](https://codesandbox.io/static/img/play-codesandbox.svg)](edit)
 
-Official [Mantine](https://mantine.dev/) + [Vite](https://vitejs.dev/) template.
-
-Links:
-
-- [Mantine documentation](https://mantine.dev/)
-- [Vite documentation](https://vitejs.dev/)
+<a><img src="https://i.imgur.com/t5XP9Fo.png" alt="Stoyanov"></a>
