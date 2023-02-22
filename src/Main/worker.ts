@@ -1,5 +1,5 @@
 import { colorDetection } from '@dominate-color-js/core';
-import { WorkerError, WorkerSuccess } from './types/worker.type';
+import { WorkerError, WorkerSuccess, MessageEventWorker } from './types/worker.type';
 
 type error = { stack: string };
 
@@ -7,7 +7,8 @@ try {
   // eslint-disable-next-line no-restricted-globals
   const ctx = self;
 
-  ctx.addEventListener('message', (event) => {
+  ctx.addEventListener('message', (event: MessageEventWorker) => {
+    console.log('work');
     colorDetection(event.data, 'fast', 5)
       .then((colors) => {
         const colorsString = colors.map((color) => `rgb(${color[0]},${color[1]},${color[2]})`);

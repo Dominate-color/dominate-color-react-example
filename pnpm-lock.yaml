@@ -1,9 +1,10 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@dominate-color-js/core': ^1.0.2
+  '@dominate-color-js/core': ^1.0.4
   '@emotion/react': ^11.10.5
   '@mantine/core': 5.10.3
+  '@mantine/dropzone': ^5.10.4
   '@mantine/hooks': 5.10.3
   '@tabler/icons': ^2.4.0
   '@tabler/icons-react': ^2.4.0
@@ -36,9 +37,10 @@ specifiers:
   vite-plugin-node-polyfills: ^0.7.0
 
 dependencies:
-  '@dominate-color-js/core': 1.0.2
+  '@dominate-color-js/core': 1.0.4
   '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
   '@mantine/core': 5.10.3_fpnaedkuacjuqoctragd4xla4i
+  '@mantine/dropzone': 5.10.4_7qw7iibcf4wkwwwrwp57hnnlya
   '@mantine/hooks': 5.10.3_react@18.2.0
   '@tabler/icons': 2.4.0
   '@tabler/icons-react': 2.4.0_react@18.2.0
@@ -438,8 +440,8 @@ packages:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
     dev: true
 
-  /@dominate-color-js/core/1.0.2:
-    resolution: {integrity: sha512-a62gQYX1XndlCIQDMX7Gp1kjr1wCjWGolbMFkR+0/wW3V2jaFq8QBHrOcYbSea0gTfeTZx2DlNtkD6dk7ULJ5A==}
+  /@dominate-color-js/core/1.0.4:
+    resolution: {integrity: sha512-PhsPHJ1RslHNwZrL06UwN5aXrD4BLoJdk+zMCdPOdDBaq6TVufRsGMET29rxfcvoAGnT9gtLK2rKujHOxiNOSQ==}
     dev: false
 
   /@emotion/babel-plugin/11.10.6:
@@ -1089,6 +1091,22 @@ packages:
       - '@types/react'
     dev: false
 
+  /@mantine/dropzone/5.10.4_7qw7iibcf4wkwwwrwp57hnnlya:
+    resolution: {integrity: sha512-+xCX5ghE6WsQe+aBe300BivVeVGZgfnYUeVpCUAzr08NxIcNHxOnMMnDiVninclWrkRPiL7roSR6NVe2KOL3zQ==}
+    peerDependencies:
+      '@mantine/core': 5.10.4
+      '@mantine/hooks': 5.10.4
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@mantine/core': 5.10.3_fpnaedkuacjuqoctragd4xla4i
+      '@mantine/hooks': 5.10.3_react@18.2.0
+      '@mantine/utils': 5.10.4_react@18.2.0
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-dropzone: 14.2.3_react@18.2.0
+    dev: false
+
   /@mantine/hooks/5.10.3_react@18.2.0:
     resolution: {integrity: sha512-fFDXF0A596z10QKeWAGtTZJ4QotsMxhhbjfWWRHMogY/hXHQ2S+7+GFotpF2JbzefYztpawHEJevy3eYF8cQmQ==}
     peerDependencies:
@@ -1113,6 +1131,14 @@ packages:
 
   /@mantine/utils/5.10.3_react@18.2.0:
     resolution: {integrity: sha512-ZfR1wouA/rz3xTOb2wBnrQpIiyjLcCLLvbUo7rzaG3LhFy7UoGjZ6uqIW9qDrzs7SR4tETRfMxedYagjcoCiEg==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /@mantine/utils/5.10.4_react@18.2.0:
+    resolution: {integrity: sha512-Xrx7Pk+GOwk/0P0qa/JEknZ5AzUBRnD+Ghz1Wu3z4w32NwsNSgq/8YvFVhvxAP7FMbi7Z5xicHzHmhXy1BvZrw==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
@@ -1842,6 +1868,11 @@ packages:
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
     dev: true
+
+  /attr-accept/2.2.2:
+    resolution: {integrity: sha512-7prDjvt9HmqiZ0cl5CRjtS84sEyhsHP2coDkaZKRKVfCDo9s7iw7ChVmar78Gu9pC4SoR/28wFu/G5JJhTnqEg==}
+    engines: {node: '>=4'}
+    dev: false
 
   /available-typed-arrays/1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
@@ -3065,6 +3096,13 @@ packages:
     dependencies:
       flat-cache: 3.0.4
     dev: true
+
+  /file-selector/0.6.0:
+    resolution: {integrity: sha512-QlZ5yJC0VxHxQQsQhXvBaC7VRJ2uaxTf+Tfpu4Z/OcVQJVpZO+DGU0rkoVW5ce2SccxugvpBJoMvUs59iILYdw==}
+    engines: {node: '>= 12'}
+    dependencies:
+      tslib: 2.5.0
+    dev: false
 
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
@@ -4877,6 +4915,18 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-dropzone/14.2.3_react@18.2.0:
+    resolution: {integrity: sha512-O3om8I+PkFKbxCukfIR3QAGftYXDZfOE2N1mr/7qebQJHs7U+/RSL/9xomJNpRg9kM5h9soQSdf0Gc7OHF5Fug==}
+    engines: {node: '>= 10.13'}
+    peerDependencies:
+      react: '>= 16.8 || 18.0.0'
+    dependencies:
+      attr-accept: 2.2.2
+      file-selector: 0.6.0
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}

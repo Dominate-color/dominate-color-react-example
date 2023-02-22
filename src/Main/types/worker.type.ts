@@ -8,4 +8,6 @@ export type WorkerSuccess = {
   value: string[];
 };
 
+export type MessageEventWorker = MessageEvent<ArrayBuffer>;
+
 export type WorkerTypeColor = WorkerError | WorkerSuccess;

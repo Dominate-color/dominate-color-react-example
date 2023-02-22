@@ -6,12 +6,24 @@ export const useColorWorker = (srcToWorker: string | URL) => {
   const [loading, isLoading] = useState(false);
   const [error, setError] = useState<null | { message: string }>(null);
   const [colors, setColors] = useState<Array<string>>([]);
-  const worker = useRef(new Worker(srcToWorker, { type: 'module' })).current;
+  const workerRef = useRef<Worker | null>(null);
   const borwser = useBrowser();
 
-  const hanlder = (urlToImage: string) => {
+  const hanlder = async (fileImage: File) => {
     isLoading(true);
-    worker.postMessage(urlToImage);
+
+    fileImage
+      .arrayBuffer()
+      .then((arrayBuffer) => {
+        if (workerRef.current === null) {
+          throw new Error('worker is not initialized');
+        }
+        workerRef.current.postMessage(arrayBuffer);
+      })
+      .catch((error) => {
+        setError({ message: `${error}` });
+        isLoading(false);
+      });
   };
 
   useEffect(() => {
@@ -28,11 +40,13 @@ export const useColorWorker = (srcToWorker: string | URL) => {
         }
         isLoading(false);
       };
-
+      const worker = new Worker(srcToWorker, { type: 'module' });
       worker.addEventListener('message', workerEvent);
+      workerRef.current = worker;
 
       return () => {
         worker.removeEventListener('message', workerEvent);
+        worker.terminate();
       };
     }
   }, []);
@@ -42,5 +56,6 @@ export const useColorWorker = (srcToWorker: string | URL) => {
     colors,
     loading,
     error,
+    setColors,
   };
 };

@@ -15,9 +15,10 @@
     "test": "npm run typecheck && npm run prettier && npm run lint && npm run jest && npm run build"
   },
   "dependencies": {
-    "@dominate-color-js/core": "^1.0.2",
+    "@dominate-color-js/core": "^1.0.4",
     "@emotion/react": "^11.10.5",
     "@mantine/core": "5.10.3",
+    "@mantine/dropzone": "^5.10.4",
     "@mantine/hooks": "5.10.3",
     "@tabler/icons": "^2.4.0",
     "@tabler/icons-react": "^2.4.0",
